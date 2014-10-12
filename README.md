@@ -1,29 +1,40 @@
-# Titulo::Eleitoral
+# TituloEleitoral
 
-TODO: Write a gem description
+Esta gem permite validar o número de inscrição presente no título eleitoral, de acordo com o artigo 12 da resolução número 21.538 do TSE, de 14/10/2003.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Adicione essa linha no arquivo Gemfile da sua aplicação:
 
     gem 'titulo-eleitoral'
 
-And then execute:
+E etão execute:
 
     $ bundle
 
-Or install it yourself as:
+Ou instale você mesmo:
 
     $ gem install titulo-eleitoral
 
-## Usage
+## Uso
 
-TODO: Write usage instructions here
+A utilização é bem simples:
 
-## Contributing
+```ruby
+# Para verificar se o número de inscrição é válido:
+TituloEleitoral.valido?('324542010232')
 
-1. Fork it ( https://github.com/[my-github-username]/titulo-eleitoral/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+# Para verificar a UF do número de inscrição:
+TituloEleitoral.uf('324542010232')
+
+# Para retorna uma instância da classe TituloEleitoral::NumeroInscricao:
+TituloEleitoral.numero_inscricao('324542010232')
+```
+
+## Contribuindo
+
+1. Faça um Fork
+2. Crie um branch para a nova funcionalidade (`git checkout -b minha-nova-funcionalidade`)
+3. Faça o commit de suas alterações  (`git commit -am 'Adicionada nova funcionalidade'`)
+4. Faça um push da sua nova funconalidade (`git push origin minha-nova-funcionalidade`)
+5. Submeta uma nova Pull Request
