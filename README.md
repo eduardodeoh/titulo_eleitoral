@@ -2,7 +2,7 @@
 
 Esta gem permite validar o número de inscrição presente no título eleitoral, de acordo com o artigo 12 da resolução número 21.538 do TSE, de 14/10/2003.
 
-## Installation
+## Instalação
 
 Adicione essa linha no arquivo Gemfile da sua aplicação:
 
@@ -27,7 +27,7 @@ TituloEleitoral.valido?('324542010232')
 # Para verificar a UF do número de inscrição:
 TituloEleitoral.uf('324542010232')
 
-# Para retorna uma instância da classe TituloEleitoral::NumeroInscricao:
+# Para retornar uma instância da classe TituloEleitoral::NumeroInscricao:
 TituloEleitoral.numero_inscricao('324542010232')
 ```
 
