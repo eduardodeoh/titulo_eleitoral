@@ -1,4 +1,4 @@
-require 'titulo-eleitoral/constantes'
+require 'titulo_eleitoral/constantes'
 
 module TituloEleitoral
   class NumeroInscricao

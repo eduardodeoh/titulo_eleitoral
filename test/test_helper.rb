@@ -1,6 +1,6 @@
 require 'coveralls'
 Coveralls.wear!
 
-require 'titulo-eleitoral'
+require 'titulo_eleitoral'
 require 'minitest/autorun'
 require 'minitest/pride'

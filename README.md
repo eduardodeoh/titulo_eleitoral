@@ -1,6 +1,6 @@
 # TituloEleitoral
 
-[![Build Status](https://travis-ci.org/eduardodeoh/titulo-eleitoral.svg?branch=master)](https://travis-ci.org/eduardodeoh/titulo-eleitoral) [![Coverage Status](https://coveralls.io/repos/eduardodeoh/titulo-eleitoral/badge.png?branch=master)](https://coveralls.io/r/eduardodeoh/titulo-eleitoral?branch=master) [![Gem Version](https://badge.fury.io/rb/titulo-eleitoral.svg)](http://badge.fury.io/rb/titulo-eleitoral)
+[![Build Status](https://travis-ci.org/eduardodeoh/titulo_eleitoral.svg?branch=master)](https://travis-ci.org/eduardodeoh/titulo_eleitoral) [![Coverage Status](https://coveralls.io/repos/eduardodeoh/titulo_eleitoral/badge.png?branch=master)](https://coveralls.io/r/eduardodeoh/titulo_eleitoral?branch=master) [![Gem Version](https://badge.fury.io/rb/titulo_eleitoral.svg)](http://badge.fury.io/rb/titulo_eleitoral)
 
 Esta gem permite validar o número de inscrição presente no título eleitoral, de acordo com o artigo 12 da resolução número 21.538 do TSE, de 14/10/2003.
 
@@ -8,7 +8,7 @@ Esta gem permite validar o número de inscrição presente no título eleitoral,
 
 Adicione essa linha no arquivo Gemfile da sua aplicação:
 
-    gem 'titulo-eleitoral'
+    gem 'titulo_eleitoral'
 
 E etão execute:
 
@@ -16,7 +16,7 @@ E etão execute:
 
 Ou instale você mesmo:
 
-    $ gem install titulo-eleitoral
+    $ gem install titulo_eleitoral
 
 ## Uso
 

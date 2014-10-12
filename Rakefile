@@ -3,8 +3,8 @@ require 'bundler/gem_tasks'
 require 'rake/testtask'
 
 Rake::TestTask.new do |t|
-  t.libs << 'lib/titulo-eleitoral'
-  t.test_files = FileList['test/*_test.rb']
+  t.libs << 'lib/titulo_eleitoral'
+  t.test_files = FileList['test/**/*_test.rb']
   t.verbose = true
 end
 

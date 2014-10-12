@@ -1,5 +1,5 @@
-require 'titulo-eleitoral/version'
-require 'titulo-eleitoral/numero_inscricao'
+require 'titulo_eleitoral/version'
+require 'titulo_eleitoral/numero_inscricao'
 
 module TituloEleitoral
   def self.valido?(numero)
