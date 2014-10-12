@@ -1,6 +1,6 @@
 # TituloEleitoral
 
-[![Build Status](https://travis-ci.org/eduardodeoh/titulo-eleitoral.svg?branch=master)](https://travis-ci.org/eduardodeoh/titulo-eleitoral)
+[![Build Status](https://travis-ci.org/eduardodeoh/titulo-eleitoral.svg?branch=master)](https://travis-ci.org/eduardodeoh/titulo-eleitoral) [![Coverage Status](https://coveralls.io/repos/eduardodeoh/titulo-eleitoral/badge.png?branch=master)](https://coveralls.io/r/eduardodeoh/titulo-eleitoral?branch=master)
 
 Esta gem permite validar o número de inscrição presente no título eleitoral, de acordo com o artigo 12 da resolução número 21.538 do TSE, de 14/10/2003.
 
