@@ -14,7 +14,7 @@ module TituloEleitoral
     end
 
     def valido?
-      return false if numero_original.size > NUMERO_DIGITOS
+      return false if numero.size > NUMERO_DIGITOS
       digitos_verificadores == digitos_verificadores_calculados
     end
 
@@ -43,8 +43,8 @@ module TituloEleitoral
 
       def divide_em_array(numero)
         case
-          when numero.is_a?(String) && numero.match(/\d$/)
-            numero.split('')
+          when numero.is_a?(String) && !numero.empty?
+            somente_numeros(numero).split('')
           when numero.is_a?(Fixnum)
             numero.to_s.split('')
           else
@@ -53,7 +53,7 @@ module TituloEleitoral
       end
 
       def normaliza_quantidade_digitos(numero)
-        (numero.join.size == NUMERO_DIGITOS) ? numero : numero.join.rjust(NUMERO_DIGITOS, "0").split('')
+        (numero.join.size >= NUMERO_DIGITOS) ? numero : numero.join.rjust(NUMERO_DIGITOS, "0").split('')
       end
 
       def digitos_uf
@@ -82,6 +82,10 @@ module TituloEleitoral
           else
             resto_divisao
         end
+      end
+
+      def somente_numeros(valor)
+        valor.gsub(/\D/, '')
       end
   end
 end

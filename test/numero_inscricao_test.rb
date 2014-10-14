@@ -73,6 +73,7 @@ describe TituloEleitoral::NumeroInscricao do
   describe 'dada uma string com dígitos e letras' do
     before do
       @valor5 = '6773570013AB'
+      @somente_numeros = '6773570013'
       @numero5 = TituloEleitoral::NumeroInscricao.new(@valor5)
     end
 
@@ -80,13 +81,13 @@ describe TituloEleitoral::NumeroInscricao do
       @numero5.valido?.must_equal false
     end
 
-    it 'número original deve ser uma array vazio' do
-      @numero5.numero_original.must_equal []
+    it 'número original deve ser uma array contendo apenas número' do
+      @numero5.numero_original.must_equal @somente_numeros.to_s.split('')
     end
 
-    it 'número deve ser um array preenchido com zeros' do
-      @numero5.numero.must_equal Array.new(12,'0')
-    end
+     it 'número deve ser um array preenchido com zeros' do
+       @numero5.numero.must_equal @somente_numeros.rjust(12, '0').split('')
+     end
   end
 
   describe 'dada uma string válida de 12 dígitos e dígitos da UF menores que 01 ou maiores que 28' do
@@ -98,6 +99,17 @@ describe TituloEleitoral::NumeroInscricao do
     it 'dígitos da UF maior que 28 retorna nil' do
       numero = TituloEleitoral::NumeroInscricao.new('067735702932')
       numero.uf.must_be_nil
+    end
+  end
+
+  describe 'dada uma string formatada com número de inscrição válido' do
+    before do
+      @valor6 = '3168.2055.0159'
+      @numero6 = TituloEleitoral::NumeroInscricao.new(@valor6)
+    end
+
+    it 'deve ser válido' do
+      @numero6.valido?.must_equal true
     end
   end
 
