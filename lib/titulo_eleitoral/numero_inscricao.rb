@@ -6,6 +6,8 @@ module TituloEleitoral
 
     #http://www.tse.jus.br/legislacao/codigo-eleitoral/normas-editadas-pelo-tse/resolucao-nb0-21.538-de-14-de-outubro-de-2003-brasilia-2013-df
     #http://www.exceldoseujeito.com.br/2008/12/19/validar-cpf-cnpj-e-titulo-de-eleitor-parte-ii/
+    #http://cdn.tse.jus.br/saae/util/scriptsGerais.js
+    #http://ef3cinco.com/2011/09/07/como-validar-titulo-de-eleitor-usando-java-netbeans/
     def initialize(numero)
       @numero_original = divide_em_array(numero)
       @numero = normaliza_quantidade_digitos(numero_original)
@@ -74,14 +76,7 @@ module TituloEleitoral
       end
 
       def verifica_resto(resto_divisao)
-        case resto_divisao
-          when 10
-            0
-          when 0 || 1
-            1
-          else
-            resto_divisao
-        end
+        resto_divisao == 10 ? 0 : 1
       end
 
       def somente_numeros(valor)
