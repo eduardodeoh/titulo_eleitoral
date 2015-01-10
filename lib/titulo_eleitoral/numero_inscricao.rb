@@ -1,4 +1,4 @@
-require 'titulo_eleitoral/constantes'
+require_relative 'constantes'
 
 module TituloEleitoral
   class NumeroInscricao
@@ -8,6 +8,7 @@ module TituloEleitoral
     #http://www.exceldoseujeito.com.br/2008/12/19/validar-cpf-cnpj-e-titulo-de-eleitor-parte-ii/
     #http://cdn.tse.jus.br/saae/util/scriptsGerais.js
     #http://ef3cinco.com/2011/09/07/como-validar-titulo-de-eleitor-usando-java-netbeans/
+
     def initialize(numero)
       @numero_original = divide_em_array(numero)
       @numero = normaliza_quantidade_digitos(numero_original)
@@ -16,11 +17,15 @@ module TituloEleitoral
     end
 
     def valido?
-      return false if numero.size > NUMERO_DIGITOS
+      return false if (numero.size > NUMERO_DIGITOS) || (codigo_uf.nil?)
       digitos_verificadores == digitos_verificadores_calculados
     end
 
-    def uf
+    def codigo_uf
+      digitos_uf if uf_valida?
+    end
+
+    def sigla_uf
       UFS[digitos_uf] if uf_valida?
     end
 
@@ -76,7 +81,15 @@ module TituloEleitoral
       end
 
       def verifica_resto(resto_divisao)
-        resto_divisao == 10 ? 0 : 1
+        if resto_divisao == 10
+          0
+        else
+          if (resto_divisao == 0) && ((sigla_uf == 'SP') || (sigla_uf == 'MG'))
+            1
+          else
+            resto_divisao
+          end
+        end
       end
 
       def somente_numeros(valor)

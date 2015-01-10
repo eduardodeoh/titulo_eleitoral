@@ -10,7 +10,11 @@ module TituloEleitoral
     NumeroInscricao.new(numero)
   end
 
-  def self.uf(numero)
-    numero_inscricao(numero).uf
+  def self.codigo_uf(numero)
+    numero_inscricao(numero).codigo_uf
+  end
+
+  def self.sigla_uf(numero)
+    numero_inscricao(numero).sigla_uf
   end
 end

@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Eduardo de O. Hernandes']
   spec.email         = ['eduardodeoh@gmail.com']
   spec.summary       = %q{Validação do número de inscrição do título eleitoral.}
-  spec.description   = %q{Valida o número de inscrição do título eleitoral conforme resolução 21.538 (14/10/2003) do TSE, artigo 12.}
+  spec.description   = %q{Valida o número de inscrição do título eleitoral conforme resolução 21.538 (14/10/2003) do TSE, artigo 12. A verificação também pode ser feita através do site: http://www.tse.jus.br/eleitor/servicos/situacao-eleitoral/consulta-por-titulo}
   spec.homepage      = 'https://github.com/eduardodeoh/titulo_eleitoral'
   spec.license       = 'MIT'
 
